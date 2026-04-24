@@ -1,6 +1,6 @@
 # Solo Conductor
 
-An orchestrator Claude Code session that plans, delegates, and coordinates work across Solo-managed projects using the [Solo MCP server](https://soloterm.com).
+An orchestrator Claude Code session that plans, delegates, and coordinates work across your projects in Solo using the [Solo](https://soloterm.com) tool.
 
 The conductor does not write application code. It spawns agents, tracks progress via todos and scratchpads, and reports back.
 
@@ -32,14 +32,6 @@ The conductor will take it from there.
 ---
 
 ## How It Works
-
-### Agents Available
-
-| Agent | ID | Notes |
-|---|---|---|
-| Claude | 3 | Standard Claude agent |
-| Codex | 4 | OpenAI Codex agent |
-| Claude 🧨 | 8 | Skips permission prompts |
 
 ### Coordination Primitives
 
