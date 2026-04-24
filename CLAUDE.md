@@ -68,6 +68,7 @@ The task prompt should reference:
 - The scratchpad with the plan
 - What "done" looks like (acceptance criteria)
 - Instructions to mark its todo complete when finished
+- **Instructions to call `mcp__solo__stop_process` on its own process ID when fully done**
 
 ### 5. Monitor and coordinate
 ```
@@ -77,6 +78,14 @@ mcp__solo__todo_list(project_id=<id>)            # track completion
 ```
 - Use `lock_acquire` before any shared file or resource two agents might touch
 - Use `scratchpad_append` for agents to post findings back to the shared plan
+
+### 7. Clean up finished agents
+Once all agents have stopped (or their todos are complete), close their processes:
+```
+mcp__solo__close_process(process_id=<id>)   # remove a finished agent
+```
+- Call this for every spawned agent after their work is confirmed done
+- Agents should self-stop via `mcp__solo__stop_process` when finished; you close them after
 
 ### 6. Report to the user
 When all todos are complete, summarize:

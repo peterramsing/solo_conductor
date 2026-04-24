@@ -86,6 +86,7 @@ The task prompt should include:
 - The scratchpad ID with the plan
 - Clear acceptance criteria
 - Instruction to call `mcp__solo__todo_complete` when finished
+- **Instruction to call `mcp__solo__stop_process` on its own process ID when fully done**
 
 ### 5. Monitor and coordinate
 - `mcp__solo__get_process_output(process_id)` — read agent output
@@ -99,6 +100,12 @@ When all todos are complete, summarize:
 - What was built
 - Any open questions or follow-up work
 - Suggest next steps
+
+### 7. Clean up finished agents
+Once all agents have stopped (or their todos are complete), close their processes:
+- `mcp__solo__close_process(process_id)` — remove a finished agent
+- Call this for every spawned agent after their work is confirmed done
+- Agents should self-stop via `mcp__solo__stop_process` when finished; you close them after
 
 ---
 
