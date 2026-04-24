@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__solo__help",
+      "mcp__solo__list_projects",
+      "mcp__solo__list_agent_tools",
+      "mcp__solo__select_project",
+      "mcp__solo__spawn_process"
+    ]
+  }
+}
